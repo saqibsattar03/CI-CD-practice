@@ -1,18 +1,19 @@
-import {Injectable} from "@nestjs/common";
+import { Injectable } from '@nestjs/common';
 import {
-    MongooseModuleOptions,
-    MongooseOptionsFactory,
+  MongooseModuleOptions,
+  MongooseOptionsFactory,
 } from '@nestjs/mongoose';
-import * as process from "process";
+import * as process from 'process';
 
 @Injectable()
-export class MongooseConfigService implements MongooseOptionsFactory
-{
-createMongooseOptions(): Promise<MongooseModuleOptions> | MongooseModuleOptions {
-    return{
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-        uri: process.env.MONGO_URI,
-    }
-}
+export class MongooseConfigService implements MongooseOptionsFactory {
+  createMongooseOptions():
+    | Promise<MongooseModuleOptions>
+    | MongooseModuleOptions {
+    return {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      uri: process.env.MONGO_URI,
+    };
+  }
 }

@@ -3,34 +3,29 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { CoffeesModule } from './coffees/coffees.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import {DbModule} from "./db/db.module";
+import { DbModule } from './db/db.module';
 import { ConfigModule } from '@nestjs/config';
 
-
-
-
-@Module(
-  {
-  imports: 
-  [
-  //   CoffeesModule,
-  //   TypeOrmModule.forRoot({
-  //   type: 'postgres',
-  //   host: 'localhost',
-  //   port: 5432,
-  //   username: 'postgres',
-  //   password: 'pass123',
-  //   database: 'postgres',
-  //   autoLoadEntities: true,
-  //   synchronize: true,
-  //
-  // }),
-      ConfigModule.forRoot({
-isGlobal:true,
-envFilePath:'.env.development'
-      }),
-      DbModule
-    ],
+@Module({
+  imports: [
+    //   CoffeesModule,
+    //   TypeOrmModule.forRoot({
+    //   type: 'postgres',
+    //   host: 'localhost',
+    //   port: 5432,
+    //   username: 'postgres',
+    //   password: 'pass123',
+    //   database: 'postgres',
+    //   autoLoadEntities: true,
+    //   synchronize: true,
+    //
+    // }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env.development',
+    }),
+    DbModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -1,19 +1,18 @@
-import { Column, Entity, Index, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
-@Index(["name","type"])
+@Index(['name', 'type'])
 @Entity()
-export class Event 
-{
-    @PrimaryGeneratedColumn()
-    id : number;
+export class Event {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    type: string;
+  @Column()
+  type: string;
 
-    @Index()
-    @Column()
-    name: String;
+  @Index()
+  @Column()
+  name: string;
 
-    @Column('json')
-    paylaod: Record<string, any>;
+  @Column('json')
+  paylaod: Record<string, any>;
 }
