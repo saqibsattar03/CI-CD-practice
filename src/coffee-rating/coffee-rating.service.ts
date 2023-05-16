@@ -4,6 +4,6 @@ import { CoffeesService } from 'src/coffees/coffees.service';
 @Injectable()
 export class CoffeeRatingService {
   constructor(
-      // private readonly coffeesService: CoffeesService
+      private readonly coffeesService: CoffeesService
   ) {}
 }

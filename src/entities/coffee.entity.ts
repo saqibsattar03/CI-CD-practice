@@ -1,4 +1,3 @@
-import { type } from 'os';
 import { Flavor } from 'src/coffees/entities/flavor.entity/flavor.entity';
 
 import {

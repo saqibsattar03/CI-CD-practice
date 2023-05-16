@@ -25,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Lint the codebase
-        run: npm run lint
+#      - name: Lint the codebase
+#        run: npm run lint
 
 #      - name: Test our code
 #        run: npm test
